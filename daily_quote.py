@@ -1,4 +1,3 @@
-`python
 import random
 import datetime
 
@@ -7,7 +6,8 @@ quotes = [
     "代码未至.bug先行。",
     "程序员三大美德：懒惰、不耐烦、傲慢。 - Larry Wall",
     "Stay hungry, stay foolish. - Steve Jobs",
-    "人生苦短,我用Python。"]
+    "人生苦短,我用Python。"
+    "代码是写给人看的，顺便让计算机执行。 - Donald Knuth"
 ]
 
 def get_daily_quote():
