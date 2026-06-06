@@ -1,0 +1,32 @@
+[
+    {
+        "content": "代码未至,bug先行。",
+        "author": "佚名",
+        "category": "技术"
+    },
+    {
+        "content": "人生苦短,我用Python。",
+        "author": "Python社区",
+        "category": "技术"
+    },
+    {
+        "content": "Talk is cheap. Show me the code.",
+        "author": "Linus Torvalds",
+        "category": "技术"
+    },
+    {
+        "content": "Stay hungry, stay foolish.",
+        "author": "Steve Jobs",
+        "category": "人生"
+    },
+    {
+        "content": "程序员三大美德：懒惰、不耐烦、傲慢。",
+        "author": "Larry Wall",
+        "category": "幽默"
+    },
+    {
+        "content": "测试语句。",
+        "author": "jkl",
+        "category": "测试"
+    }
+]
