@@ -1,6 +1,6 @@
 import datetime
 from quote_manager import load_quotes, get_daily_quote, get_quotes_by_category, add_quote
-
+from quote_manager import QuoteManager
 
 def show_menu():
     print("\n" + "=" * 40)
@@ -15,6 +15,7 @@ def show_menu():
 
 
 def main():
+    manager = QuoteManager()
     while True:
         show_menu()
         choice = input("请选择操作：").strip()
