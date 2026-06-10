@@ -1,6 +1,5 @@
-import datetime
-from quote_manager import load_quotes, get_daily_quote, get_quotes_by_category, add_quote
 from quote_manager import QuoteManager
+
 
 def show_menu():
     print("\n" + "=" * 40)
@@ -10,6 +9,8 @@ def show_menu():
     print("2. 按分类查看")
     print("3. 添加新名言")
     print("4. 查看全部名言")
+    print("5. 删除名言")
+    print("6. 更新名言")
     print("q. 退出")
     print("-" * 40)
 
@@ -56,6 +57,38 @@ def main():
             for i, q in enumerate(quotes, 1):
                 print(f"{i}. {q['content']}（{q['author']}）[{q['category']}]")
         
+        elif choice == "5":
+            quotes = manager.get_all()
+            if not quotes:
+                print("暂无名言可删除。")
+            else:
+                print("\n【删除名言】")
+                for i, q in enumerate(quotes, 1):
+                    print(f"{i}. {q}")
+                try:
+                    num = int(input("请输入要删除的名言编号："))
+                    manager.delete(num)
+                except ValueError:
+                    print("❌ 请输入有效的数字！")
+            
+        
+        elif choice == "6":
+            quotes = manager.get_all()
+            if not quotes:
+                print("暂无名言可更新。")
+            else:
+                print("\n【更新名言】")
+                for i, q in enumerate(quotes, 1):
+                    print(f"{i}. {q}")
+                try:
+                    num = int(input("请输入要更新的名言编号："))
+                    content = input("请输入新的名言内容：").strip()
+                    author = input("请输入新的作者：").strip()
+                    category = input("请输入新的分类：").strip()
+                    manager.update(num, content, author, category)
+                except ValueError:
+                    print("❌ 请输入有效的数字！")
+                              
         else:
             print("❌ 无效选择，请重新输入。")
 
