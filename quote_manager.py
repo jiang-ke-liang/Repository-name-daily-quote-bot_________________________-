@@ -10,9 +10,11 @@ class Quote:
         self.author = author
         self.category = category
     
+    # 定义字符串表示，方便打印
     def __str__(self):
         return f"{self.content} —— {self.author}"
     
+    # 定义字典表示，方便保存到 JSON
     def to_dict(self):
         return {
             "content": self.content,
@@ -40,6 +42,7 @@ class QuoteManager:
     def save(self):
         """保存到文件"""
         data = [q.to_dict() for q in self.quotes]
+        # 使用 ensure_ascii=False 保持中文字符，indent=2 美化格式
         with open(self.filename, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
     
@@ -80,6 +83,7 @@ class QuoteManager:
         if not self.quotes:
             print("❌ 暂无名言可修改")
             return False
+        # index 是用户输入的编号，从 1 开始，所以要减 1 转换为列表索引
         if 1 <= index <= len(self.quotes):
             quote = self.quotes[index - 1]
             if content:
@@ -99,6 +103,7 @@ class QuoteManager:
         """今日名言"""
         if not self.quotes:
             return None
+        # 根据日期固定随机种子，确保每天的名言不变
         today = datetime.date.today()
         random.seed(today.toordinal())
         return random.choice(self.quotes)
