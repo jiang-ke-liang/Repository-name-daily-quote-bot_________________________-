@@ -80,6 +80,8 @@ def main():
                 print("\n【更新名言】")
                 for i, q in enumerate(quotes, 1):
                     print(f"{i}. {q}")
+                    # 用户输入编号后，可以选择修改内容、作者和分类，留空表示不修改
+                # 例如：输入编号后，提示用户输入新的内容、作者和分类，如果用户直接按回车，则保持原值不变    
                 try:
                     num = int(input("请输入要更新的名言编号："))
                     content = input("请输入新的名言内容：").strip()
